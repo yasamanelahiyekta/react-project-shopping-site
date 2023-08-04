@@ -1,0 +1,50 @@
+.dm {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    margin-top: 0.01rem;
+    color: white;
+}
+
+.he {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    margin-top: 0.01rem;
+    font-weight: bolder;
+    font-size: large;
+    font-style: oblique;
+    height: 100px;
+    color: white;
+}
+
+.pr {
+    width: 1318px;
+    margin: 0 auto;
+    border-top: 1px solid red;
+}
+
+.ed {
+    text-align: left;
+    margin-left: 5rem;
+    padding-top: 3rem;
+}
+
+.errorbadge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.full {
+    height: 100%;
+}

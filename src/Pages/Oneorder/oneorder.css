@@ -1,0 +1,158 @@
+.col {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.ro {
+    margin-top: 1rem;
+    border: 0.05px solid red;
+}
+
+.spa {
+    background-color: red;
+    color: black;
+    padding: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+
+.maman {
+    background-color: black;
+}
+
+.sp {
+    padding: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid red;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.1rem solid red;
+    width: 25%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 0.7rem;
+}
+
+.ta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    border: 1px solid red;
+    color: aliceblue;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.t {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    border: 1px solid red;
+    color: aliceblue;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.i {
+    width: 100px;
+    height: 100px;
+}
+
+.ta2 {
+    margin: 0.5rem;
+
+}
+
+.ta1 {
+    margin: 0.5rem;
+
+}
+
+
+.in {
+    display: flex;
+    justify-content: safe;
+    align-items: center;
+}
+
+@media (min-width:425px) and (max-width:768px) {
+    .ctt {
+        display: none;
+    }
+}
+
+@media (min-width:320px) and (max-width:426px) {
+    /* .cttt {
+        display: none;
+    } */
+
+    .ta1 {
+        display: none;
+    }
+
+
+    .ta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* text-align: left; */
+        gap: 2rem;
+    }
+}
+
+
+
+.tab p {
+    border: 2px solid rgb(196, 89, 196);
+    border-radius: 20px;
+}
+
+.tab p:hover {
+    border-color: white;
+    background-color: rgb(196, 89, 196);
+    color: white;
+}
+
+.tab {
+    display: none;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .tab {
+        display: contents;
+        color: black;
+    }
+
+    .in {
+        justify-content: center;
+    }
+
+    .ta1 {
+        display: none;
+    }
+
+    .section {
+        display: none;
+    }
+}

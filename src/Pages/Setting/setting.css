@@ -1,0 +1,23 @@
+.setting {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    height: 500px;
+    width: 150px;
+    margin-left: 1rem;
+    margin-top: 2rem;
+
+}
+
+.set {
+    height: 550px;
+    width: 200px;
+    margin: 2rem;
+    border: 0.01rem solid red;
+    border-radius: 20px;
+}
+
+.setting p {
+    color: white;
+}

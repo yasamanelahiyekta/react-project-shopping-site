@@ -1,0 +1,62 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.open {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.005rem;
+}
+
+.eye {
+    border: none;
+    margin: 0px;
+}
+
+.eye:focus {
+    border: none;
+}
+
+.la {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+.lam {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem;
+
+}
+
+.paseye {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2.3px solid rgb(169, 16, 121);
+    width: max-content;
+    height: max-content;
+    padding-right: 0.05rem;
+    border-radius: 20px;
+}
+
+Button {
+    margin: 1rem;
+}

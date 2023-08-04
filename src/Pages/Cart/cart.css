@@ -1,0 +1,48 @@
+.c {
+    display: flex;
+
+    align-items: center;
+}
+
+.bo {
+    padding-top: 50px;
+    padding-bottom: 90px;
+    margin-top: 2rem;
+    border-radius: 200px;
+    background-color: black;
+    color: white;
+}
+
+.ne {
+    display: flex;
+
+    flex-direction: column;
+
+
+}
+
+
+
+@media (min-width:320px) and (max-width:768px) {
+    #c1 {
+        display: none;
+    }
+
+}
+
+.nex {
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+}
+
+.en {
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    gap: 1rem;
+}

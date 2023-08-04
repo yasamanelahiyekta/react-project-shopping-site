@@ -1,0 +1,50 @@
+.c {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.cc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+@media (min-width:320px) and (max-width:768px) {
+    .cc {
+        display: none;
+    }
+}
+
+span svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.r1 {
+    border: 1px solid red;
+    background-color: black;
+    border-radius: 20px;
+    margin: 1rem 0 1rem 0;
+    color: aliceblue;
+}
+
+.r2 {
+    background-color: black;
+    border: 1px solid red;
+    border-radius: 20px;
+    margin: 1rem 0 1rem 0;
+    color: aliceblue;
+}
+
+.svg {
+    cursor: pointer;
+
+}
+
+.svg:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1rem;
+}
