@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import Router from './Router';
 
 function App() {
+  console.log("hi");
   return (
     <div className="App">
       <Header />
