@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Accordion, Badge, Button, Col, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Row } from "react-bootstrap";
+import { Badge, Container, Form, Nav, Navbar } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { flag, render, search } from "../../Action";
+import { flag, search } from "../../Action";
 import "./header.css"
 const Header = (val) => {
     const plist = JSON.parse(localStorage.getItem("pprice"))
