@@ -1,8 +1,6 @@
 * {
   scroll-behavior: smooth;
-  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: medium;
-  font-weight: lighter; */
+
 }
 
 .ho {
@@ -76,7 +74,6 @@
   justify-content: center;
   align-items: stretch;
   height: 380px;
-  /* border-radius: 20px; */
   gap: 1rem;
   border-color: red;
 }
@@ -84,7 +81,6 @@
 .card:hover {
 
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  /* box-shadow: rgba(120, 6, 95, 0.781) 0px 0px 0px 3px; */
   border: 0.1rem solid rgb(107, 14, 107);
 }
 

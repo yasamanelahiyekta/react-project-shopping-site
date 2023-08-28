@@ -3,6 +3,7 @@ import { Badge, Carousel, Col, Container, Row, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Action, pprice } from "../../Action";
+import { v4 as uuidv4 } from 'uuid';
 import "./home.css"
 import { Link, useNavigate } from "react-router-dom";
 const Home = () => {
@@ -24,7 +25,6 @@ const Home = () => {
             m.push(item)
         }
     })
-    console.log(k);
     const result = data.filter(
         (item) => {
             const name = item.name.toLowerCase()
@@ -41,8 +41,8 @@ const Home = () => {
         <>
             <div className="slider">
                 <Carousel>
-                    { loading ? "" : error ? "" :
-                        data.map(item => (<Carousel.Item>
+                    { loading ? "" : error || log.error ? "" :
+                        data.map(item => (<Carousel.Item key={ uuidv4() } >
                             <img className="imgcarousel"
                                 src={ `${item.image}` }
                                 alt="First slide"
@@ -86,7 +86,7 @@ const Home = () => {
                 ) : (
                     <div>
                         <Container>
-                            <p id="k">Mouse</p>
+                            <p id="m">Mouse</p>
                             <Row id="row">
 
                                 { data ? m.map((item) => {
