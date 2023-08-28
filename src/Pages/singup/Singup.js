@@ -14,7 +14,6 @@ const Singup = () => {
     const selector = useSelector(s => s.singup)
     const [eye, setEye] = useState(false)
     const dispatch = useDispatch()
-    console.log(selector);
     return (<div>
         <form className="formlog">
             <div className="divlog" >

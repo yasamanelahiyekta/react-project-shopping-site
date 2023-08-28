@@ -1,23 +1,15 @@
 import React, { useEffect, useMemo } from "react";
-import { Badge, Button, Card, CardGroup, Carousel, CarouselItem, Col, Container, Row, Spinner } from "react-bootstrap";
+import { Badge, Carousel, Col, Container, Row, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-// import { Carousel } from 'react-bootstrap/Carousel';
-// import { ExampleCarouselImage } from 'components/ExampleCarouselImage'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Action, pprice } from "../../Action";
 import "./home.css"
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import Test from "../../Components/Test/Test";
-import { useState } from "react";
 const Home = () => {
-    // const [pprice, setPprice] = useState([])
     const navigate = useNavigate()
     const { data, loading, error } = useSelector(s => s.Data)
     const log = useSelector(s => s.login)
     const search = useSelector(s => s.search.text)
-    const seplog = useSelector(s => s.pprice)
-    console.log(log.error);
     const dispatch = useDispatch()
     const plist = data.map(item => item.price).sort((x, y) => {
         return x - y
@@ -56,10 +48,7 @@ const Home = () => {
                                 alt="First slide"
                             />
                         </Carousel.Item>
-
                         )) }
-
-
                 </Carousel>
             </div>
             <div className="ho" >

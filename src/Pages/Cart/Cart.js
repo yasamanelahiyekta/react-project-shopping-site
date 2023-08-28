@@ -25,14 +25,11 @@ const Cart = () => {
     }
     const navigate = useNavigate()
     const token = localStorage.getItem("token")
-    console.log(token);
     const data = JSON.parse(localStorage.getItem("cart"))
-    console.log(data);
     const price = data.reduce((x, item) => {
         return x + item.price
     }, 0)
     localStorage.setItem("price", JSON.stringify(price))
-    console.log(price);
     const dispatch = useDispatch()
     const help = {}
     data.map(item => {
@@ -59,7 +56,6 @@ const Cart = () => {
                                     localStorage.setItem("cart", JSON.stringify(data2))
                                     dispatch(number((value.length) * -1));
                                     setFlag(l => !l)
-
                                 } } bg='danger'>Delete</Button>
                             </Col>
                         </Row>
@@ -68,28 +64,20 @@ const Cart = () => {
                         <div className='main' >
                             <Row>
                                 <>
-
                                     <Col lg="3" className='c' id='c1' ><img src={ `${value[0].image}` } /></Col>
                                     <Col xs="5" sm="4" lg="3" className='c' >{ value[0].name }</Col>
                                     <Col xs="2" sm="4" lg="3" className='c' >{ value[0].price }</Col>
                                     <Col xs="5" sm="4" lg="3" className='c' > <div className='ne'>
-
                                         <div className='en'>
                                             <Button size='sm' variant='info' onClick={ () => {
                                                 setFlag(l => !l)
-
                                                 const data2 = data.filter(item => item._id !== key)
                                                 const data3 = data.filter(item => item._id == key)
                                                 data3.shift()
                                                 const data4 = data2.concat(data3)
                                                 localStorage.setItem("cart", JSON.stringify(data4))
                                                 dispatch(number(-1))
-                                                // value[0]._id == key && value.shift()
-                                                // console.log(value, "val");
-                                                // console.log(data.filter(item => item._id==key &&), "data");
-
                                             }
-
                                             } >-</Button>
                                             <span>
                                                 { value.length }
@@ -116,7 +104,6 @@ const Cart = () => {
                             </Row>
                         </div>
                     </Container>
-
                 </div >
             )) }
             {
@@ -131,13 +118,11 @@ const Cart = () => {
                                 showCancelButton: true,
                                 confirmButtonText: 'ok',
                             }).then((result) => {
-                                /* Read more about isConfirmed, isDenied below */
                                 if (result.isConfirmed) {
                                     navigate("/Login")
                                 }
                             })
                         } } >next</Button>
-
                     </div>
             }
         </div >

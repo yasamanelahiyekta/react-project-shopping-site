@@ -3,11 +3,9 @@
     background: darkred;
     background-size: 240% 240%;
     color: white;
-    /* animation: gradient-animation 4s ease infinite; */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* margin-top: 2rem; */
 }
 
 .s {

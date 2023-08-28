@@ -1,6 +1,5 @@
 .c {
     display: flex;
-
     align-items: center;
 }
 
@@ -15,10 +14,7 @@
 
 .ne {
     display: flex;
-
     flex-direction: column;
-
-
 }
 
 

@@ -11,7 +11,6 @@ const Changeprofile = () => {
     const [age, setAge] = useState("")
     const [city, setCity] = useState("")
     const sel = useSelector(s => s.changeprofile)
-    console.log(sel);
     const dispatch = useDispatch()
 
     return (

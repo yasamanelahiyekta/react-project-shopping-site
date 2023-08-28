@@ -29,12 +29,6 @@ const Address = () => {
         progress: undefined,
         theme: "colored",
     })
-    console.log(spl.splice(0, 2).join().split().includes("0,9"));
-    // const tel = JSON.parse(localStorage.getItem("tel"))
-    // const pho = JSON.parse(localStorage.getItem("phone"))
-    // const ci = localStorage.getItem("city")
-    // const ad = JSON.parse(localStorage.getItem("adrress"))
-    // const pos = JSON.parse(localStorage.getItem("postcode"))
     const navigate = useNavigate()
     console.log(token);
     return (
@@ -101,16 +95,13 @@ const Address = () => {
                     dispatch(submit(adrress, city, postcode, telphone, totalPrice, qty, token)),
                     localStorage.removeItem("num"),
                     localStorage.removeItem("cart"),
-                    // localStorage.setItem("city", city),
-                    // localStorage.setItem("adrress", JSON.stringify(adrress)),
-                    // localStorage.setItem("tel", JSON.stringify(tel)),
-                    // localStorage.setItem("postcode", JSON.stringify(postcode)),
-                    // localStorage.setItem("phone", JSON.stringify(telphone)),
                     navigate("/Checkout")
                 )
                 } >submit</Button> : <Button variant="outline-danger" onClick={ () => (
+                    localStorage.clear(),
                     notify, alert("ops"),
                     console.log("onclick"))
+
                 } >submit</Button> }
             </div>
         </div >

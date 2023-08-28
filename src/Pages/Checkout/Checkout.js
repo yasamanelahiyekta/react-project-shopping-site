@@ -9,9 +9,7 @@ const Checkout = () => {
     const price = JSON.parse(localStorage.getItem("price"))
     const loading = useSelector(s => s.submit.loading)
     const error = useSelector(s => s.submit.error)
-    console.log(error)
     const checkout = JSON.parse(localStorage.getItem("check"))
-    // console.log(checkout.orderItems.map(i => i));
     const navigate = useNavigate()
     return (
         <div className='mt-4 full'>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import React, { useState } from "react";
 
 export const pprice = (list) => (dispatch, getstate) => {
     dispatch({ type: "pprice", paylode: list })
@@ -21,7 +20,6 @@ export const Action = () => async (dispatch, getstate) => {
             type: "getpost",
             paylode: { data: [], loading: false, error: error.message },
         });
-        console.log(error);
     }
 };
 export const allorders = () => async (dispatch, getstate) => {
@@ -37,8 +35,6 @@ export const allorders = () => async (dispatch, getstate) => {
                     `Bearer ${token}`,
             },
         })
-        console.log(data);
-        // localStorage.setItem("orders", JSON.stringify(data))
         const help = JSON.parse(JSON.stringify(data))
         dispatch({
             type: "allorders",
@@ -49,7 +45,6 @@ export const allorders = () => async (dispatch, getstate) => {
             type: "allorders",
             paylode: { data: [], loading: false, error: error.message },
         });
-        console.log(error);
     }
 };
 export const oneorder = (id) => async (dispatch, getstate) => {
@@ -75,7 +70,6 @@ export const oneorder = (id) => async (dispatch, getstate) => {
             type: "oneorder",
             paylode: { data: [], loading: false, error: error.message },
         });
-        console.log(error);
     }
 };
 
@@ -87,24 +81,19 @@ export const getoneproduct = (itemId) => async (dispatch, getstate) => {
         });
         const { data } = await axios.get(`http://kzico.runflare.run/product/${itemId}`);
         const help = JSON.parse(JSON.stringify(data))
-        console.log("get1pro", help);
         dispatch({
             type: "getoneproduct",
             paylode: { data: [help], loading: false, error: "" },
         });
-        // console.log(getstate().getcart.data);
     } catch (error) {
         dispatch({
             type: "getoneproduct",
             paylode: { data: [], loading: false, error: error.message },
         });
-        console.log(error);
     }
 };
 export const singup = (user, mail, pass, tel) => async (dispatch, getstate) => {
-    console.log("aa");
     try {
-        console.log("b");
         dispatch({ type: "singup", paylode: { dataa: [], loading: true, error: "" } })
         const { data } = await axios.post(
             "http://kzico.runflare.run/user/signup",
@@ -116,13 +105,9 @@ export const singup = (user, mail, pass, tel) => async (dispatch, getstate) => {
             }
         );
         localStorage.setItem("tel", JSON.stringify(tel))
-        console.log("c");
         dispatch({ type: "singup", paylode: { dataa: [...data], loading: false, error: "" } })
-        // console.log()
-        console.log(data);
     } catch (error) {
         dispatch({ type: "singup", paylode: { dataa: [], loading: false, error: error.response } })
-        console.log(error.response);
     }
 }
 export const login = (email, pass) => async (dispatch, getstate) => {
@@ -137,11 +122,8 @@ export const login = (email, pass) => async (dispatch, getstate) => {
         )
         const help = JSON.parse(JSON.stringify(data))
         localStorage.setItem("token", help.user.token)
-        console.log(help.user.token);
         dispatch({ type: "login", paylode: { data: [help], loading: false, error: "" } })
-        console.log("help", help);
     } catch (error) {
-        console.log(error.response);
         dispatch({ type: "login", paylode: { data: [], loading: false, error: error.response } })
     }
 }
@@ -158,12 +140,10 @@ export const getprofile = () => async (dispatch, getstate) => {
                 },
             }
         )
-        console.log("hi");
         const help = JSON.parse(JSON.stringify(data))
         dispatch({ type: "getprofile", paylode: { data: [help], loading: false, error: "" } })
     } catch (error) {
         dispatch({ type: "getprofile", paylode: { data: [], loading: false, error: error.message } })
-        console.log(error);
     }
 
 
@@ -188,31 +168,25 @@ export const changeprofile = (first, last, gender, age, city) => async (dispatch
                 },
             }
         )
-        console.log("hi");
         const help = JSON.parse(JSON.stringify(data))
         dispatch({ type: "changeprofile", paylode: { data: [help], loading: false, error: "" } })
     } catch (error) {
         dispatch({ type: "changeprofile", paylode: { data: [], loading: false, error: error.message } })
-        console.log("error", error);
     }
 
 
 }
 export const flag = (flagg) => (dispatch, getstate) => {
-    dispatch({ type: "flag", paylode: flagg })
-    console.log(true);
+    dispatch({ type: "flag", paylode: !flagg })
 }
 
 export const cart = (product) => (dispatch, getstate) => {
     dispatch({ type: "cart", paylode: { data: [...getstate().cart.data, product[0]], error: "" } })
     localStorage.setItem("cart", JSON.stringify(getstate().cart.data))
-    console.log("getstate().cart.data", getstate())
 }
 export const number = (x) => (dispatch, getstate) => {
     dispatch({ type: "number", paylode: getstate().number + x })
-    console.log(getstate().number);
     localStorage.setItem("num", JSON.stringify(getstate().number))
-    console.log(getstate().number);
 }
 export const search = (x) => (dispatch, getstate) => {
     dispatch({ type: "search", paylode: { text: `${x}` } })
@@ -242,7 +216,6 @@ export const submit = (ad, ci, pos, pho, price, qty, token) => async (dispatch, 
                 },
             }
         )
-        console.log(data);
         const help = JSON.parse(JSON.stringify(data))
         dispatch({ type: "submit", paylode: { data: [help], loading: false, error: "" } })
         localStorage.setItem("check", JSON.stringify(help))

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login, singup } from "../../Action";
-import axios from "axios";
-import Singup from "../singup/Singup";
-import Swal from "sweetalert2";
+import { flag, login, singup } from "../../Action";
 import "./login.css"
-import { Badge, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 const Login = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
@@ -15,7 +12,7 @@ const Login = () => {
     const sup = useSelector(s => s.singup)
     const [eye, setEye] = useState(false)
     const dispatch = useDispatch()
-    console.log(sup.error);
+    const select = useSelector(s => s.flag)
     return (
         <>
             { sup.error ? (<div className="ersup" >
@@ -23,7 +20,6 @@ const Login = () => {
                 <p>somthing went wrong</p>
                 <div className="erspan" >
                     { sup.error.data.message
-                        // .map(item => <span><Badge bg="danger">{ item }</Badge></span>)
                     }
                 </div>
                 <p> please refresh</p>
@@ -58,6 +54,7 @@ const Login = () => {
                     <Button variant="outline-danger" onClick={ () => {
                         dispatch(login(email, pass))
                         if (!selector.error) {
+                            dispatch(flag(select))
                             navigate("/")
                         }
                     } }>Login</Button>
@@ -70,7 +67,6 @@ const Login = () => {
                     }>Sing up</small>
                 </div>
             </div > }
-
         </>
     )
 }

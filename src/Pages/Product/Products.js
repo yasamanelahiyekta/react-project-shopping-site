@@ -3,7 +3,6 @@ import { Badge, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { cart, getoneproduct, number, render } from "../../Action";
-import { getcart } from "../../Reducer";
 import "./product.css"
 import Swal from "sweetalert2";
 
@@ -21,8 +20,6 @@ const Products = () => {
     useEffect(() => {
         dispatch(getoneproduct(itemId))
     }, [])
-    console.log(selector.cart);
-    console.log(selector);
     return (
         <div>
             { selector.getoneproduct.loading ? (

@@ -3,34 +3,29 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Accordion, Badge, Button, Col, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Row } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { render, search } from "../../Action";
-import Test from "../../Test";
+import { flag, render, search } from "../../Action";
 import "./header.css"
 const Header = (val) => {
-    // const update = () => {
-    //     document.getElementById("update").value = val
-    // }
     const plist = JSON.parse(localStorage.getItem("pprice"))
-
     const [show, setShow] = useState(false);
     const [f, setf] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const num = useSelector(s => s.number)
-    // localStorage.setItem("num", JSON.stringify(num))
     if (num <= 0) {
         localStorage.removeItem("num")
     }
-    const [one, setone] = useState("")
-    console.log(one);
     const dispatch = useDispatch()
-    // console.log(selector);
     const navigate = useNavigate()
+    const select = useSelector(s => s.flag)
     const token = localStorage.getItem("token")
     const number = localStorage.getItem("num")
     useEffect(() => {
         setf(l => !l)
-    }, [num, token])
+    }, [num, select])
+    useEffect(() => {
+        setf(l => !l)
+    }, [select])
     return (
         <div className="div">
             <>
@@ -68,7 +63,10 @@ const Header = (val) => {
                                                     }),
                                                         localStorage.clear())
                                                 } }>
-                                                    <span >log out</span>
+                                                    <span onClick={ () => {
+                                                        dispatch(flag(select))
+                                                        navigate("/")
+                                                    } } >log out</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -99,74 +97,6 @@ const Header = (val) => {
                                         </div>
                                     </>
                                 ) : <Nav.Link style={ { display: "flex", alignItems: "center", justifyContent: "center" } } href="#action2"><div className="plog"><p onClick={ () => navigate("/Login") }>login</p></div></Nav.Link> }
-
-                                <Nav.Link href="#action2" style={ { marginTop: "-2px" } } > <Button variant="write" onClick={ handleShow } className="me-2" style={ { width: "45px", height: "30px" } } >
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="black" style={ { width: "30px", height: "30px" } } >
-                                        <path d="M10 3.75a2 2 0 10-4 0 2 2 0 004 0zM17.25 4.5a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM5 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM4.25 17a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM17.25 17a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM9 10a.75.75 0 01-.75.75h-5.5a.75.75 0 010-1.5h5.5A.75.75 0 019 10zM17.25 10.75a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM14 10a2 2 0 10-4 0 2 2 0 004 0zM10 16.25a2 2 0 10-4 0 2 2 0 004 0z" />
-                                    </svg>
-
-                                </Button>
-                                    <Offcanvas show={ show } onHide={ handleClose } placement="end" >
-                                        <Offcanvas.Header closeButton>
-                                            <Offcanvas.Title>filter</Offcanvas.Title>
-                                        </Offcanvas.Header>
-                                        <Offcanvas.Body>
-                                            <Accordion>
-                                                <Accordion.Item eventKey="0">
-                                                    <Accordion.Header>brand</Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <form>
-                                                            <input type="checkbox" />
-                                                            <label>Razer</label>
-                                                            <br />
-                                                            <br />
-                                                            <input type="checkbox" />
-                                                            <label>logitech</label>
-                                                            <br />
-                                                            <br />
-                                                            <input type="checkbox" />
-                                                            <label>SteelSeries</label>
-                                                            <br />
-                                                            <br />
-                                                            <input type="checkbox" />
-                                                            <label>CORSAIR </label>
-                                                            <br />
-                                                            <br />
-                                                            <input type="checkbox" />
-                                                            <label>ASUS</label>
-                                                        </form>
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                                <Accordion.Item eventKey="1">
-                                                    <Accordion.Header>category</Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <form>
-                                                            <input type="checkbox" />
-                                                            <label>mouse</label>
-                                                            <br />
-                                                            <br />
-                                                            <input type="checkbox" />
-                                                            <label>keyboard</label>
-                                                        </form>
-
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                                <Accordion.Item eventKey="2">
-                                                    <Accordion.Header>price</Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <form>
-                                                            <div className="dpinput" >
-                                                                {/* <input type="number" className="pinput" min={ plist[0] } max={ plist[plist.length - 1] } />$ */ }
-                                                            </div>
-                                                            {/* <input id="pinput" onChange={ (e) => setone(e) } type="range" max={ plist[plist.length - 1] } min={ plist[0] } /> */ }
-                                                        </form>
-
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                            </Accordion>
-                                        </Offcanvas.Body>
-                                    </Offcanvas></Nav.Link>
-
                             </Nav>
                             <Form className="d-flex">
                                 <Form.Control
@@ -180,9 +110,7 @@ const Header = (val) => {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-
             </>
-
         </div >
     )
 }

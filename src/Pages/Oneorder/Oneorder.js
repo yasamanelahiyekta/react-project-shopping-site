@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { oneorder } from '../../Action'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,7 +13,6 @@ const Oneorder = () => {
         dispatch(oneorder(orderId))
     }, [])
     const { data, loading, error } = useSelector(s => s.oneorder)
-    // const data = JSON.parse(localStorage.getItem("oneorder"))
     console.log(data);
     return (
         <div>{ loading ? <p>...loading...</p> : error ? error : data._id ? <div className='maman'>
@@ -177,32 +176,6 @@ const Oneorder = () => {
                         </div>
                     </Container>
                 </div>
-                {/* <section className='ta' >
-                <Container>
-                { data.orderItems.map(item => (
-                    <>
-                    <Row>
-                    <section className='ta2' >
-                    <Col>
-                    <img src={ `${item.product.image}` } className='i' /> </Col>
-                    
-                    <Col>{ item.product.brand } </Col>
-                    
-                    <Col>{ item.product.category } </Col>
-                    
-                    <Col>{ item.product.color } </Col>
-                    
-                    <Col>{ item.product.name } </Col>
-                    
-                    <Col>{ item.product.price } $</Col>
-                                    <Col>{ item.qty } </Col>
-                                </section>
-                            </Row>
-                        </>
-                    )) }
-                </Container>
-            </section> */}
-
             </div>
         </div>
             : <div> empty</div> }</div>

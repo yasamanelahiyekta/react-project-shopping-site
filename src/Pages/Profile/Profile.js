@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 const Profile = () => {
     const navigate = useNavigate()
     const { data } = useSelector(s => s.getprofile)
-    console.log(data);
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getprofile())
