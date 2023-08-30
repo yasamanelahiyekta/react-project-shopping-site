@@ -1,0 +1,30 @@
+.herror {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    gap: 2rem;
+}
+
+.herror p {
+    border-radius: 2rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        box-shadow: rgb(255, 0, 0) 0px 7px 29px 0px;
+        ;
+
+    }
+
+    50% {
+        box-shadow: white;
+    }
+
+    100% {
+        box-shadow: red;
+    }
+}

@@ -11,7 +11,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(230, 185, 229);
+    background-color: black;
 }
 
 .ersup p {

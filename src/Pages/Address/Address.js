@@ -30,7 +30,6 @@ const Address = () => {
         theme: "colored",
     })
     const navigate = useNavigate()
-    console.log(token);
     return (
         <div className="ad">
             <form className="form">

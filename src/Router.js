@@ -14,6 +14,7 @@ import Address from "./Pages/Address/Address";
 import Checkout from "./Pages/Checkout/Checkout";
 import Allorders from "./Pages/Allorders/Allorders";
 import Oneorder from "./Pages/Oneorder/Oneorder";
+import Error from "./Components/Error/Error";
 const Router = () => {
     return (
         <>
@@ -33,7 +34,7 @@ const Router = () => {
                 <Route path="/Checkout" element={ <Checkout /> } />
                 <Route path="/Allorders" element={ <Allorders /> } />
                 <Route path="/Allorders/:orderId" element={ <Oneorder /> } />
-                <Route path="*" element={ <h1>404</h1> } />
+                <Route path="*" element={ <Error /> } />
 
 
             </Routes>

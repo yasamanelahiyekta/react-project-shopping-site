@@ -25,9 +25,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid purple;
+    border: 1px solid white;
     border-radius: 20px;
-    background-color: rgb(248, 232, 238);
+    background-color: red;
 }
 
 .dis {
@@ -41,9 +41,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid purple;
+    border: 1px solid white;
     border-radius: 20px;
-    background-color: rgb(254, 227, 236);
+    background-color: red;
 
 }
 
@@ -58,7 +58,7 @@
 .bt {
     padding: 1rem;
     margin: 2rem;
-    border: 1px solid rgb(87, 10, 87);
+    border: 1px solid red;
     border-radius: 20px;
     background-color: white;
     color: black;
@@ -67,7 +67,7 @@
 .bt:hover {
     padding: 1rem;
     /* border-color: rgb(242, 190, 209); */
-    background-color: rgb(242, 190, 209);
-    color: rgb(87, 10, 87);
-    border: 1px solid rgb(87, 10, 87);
+    background-color: red;
+    color: black;
+    border: 1px solid white;
 }
